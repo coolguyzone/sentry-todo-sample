@@ -110,10 +110,12 @@ function App() {
           <button
             type="button"
             onClick={() => {
-              void Promise.reject(new Error('Sentry demo: rejected Promise'))
+              Promise.reject(new Error('Sentry demo: rejected Promise')).catch(
+                (err) => Sentry.captureException(err),
+              )
             }}
           >
-            Unhandled rejection
+            Capture rejected Promise
           </button>
           <button
             type="button"
