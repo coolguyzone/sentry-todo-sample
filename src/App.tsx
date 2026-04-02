@@ -118,10 +118,10 @@ function App() {
           <button
             type="button"
             onClick={() => {
-              Sentry.captureMessage('Sentry demo: manual message', 'info')
+              Sentry.logger.info('Sentry demo: manual message')
             }}
           >
-            captureMessage (info)
+            logger.info
           </button>
         </div>
       </section>
