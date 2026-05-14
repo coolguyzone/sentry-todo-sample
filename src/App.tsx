@@ -101,8 +101,11 @@ function App() {
           <button
             type="button"
             onClick={() => {
-              const o: { x?: { y: number } } = {}
-              void o.x!.y
+              Sentry.captureException(
+                new TypeError(
+                  "Sentry demo: cannot read properties of undefined (reading 'y')",
+                ),
+              )
             }}
           >
             TypeError (undefined access)
