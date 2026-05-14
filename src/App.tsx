@@ -103,7 +103,7 @@ function App() {
             onClick={() => {
               Sentry.captureException(
                 new TypeError(
-                  "Sentry demo: cannot read properties of undefined (reading 'y')",
+                  'Sentry demo: simulated undefined property access TypeError',
                 ),
               )
             }}
